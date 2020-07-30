@@ -45,7 +45,7 @@ unset($record);
 // ユーザー別の投稿数を集計
 // SELECT 集計するキーとなるカラム名, COUNT(列名) AS 任意のカラム名を作成 FROM テーブル名 GROUP BY 集計するキーとなるカラム名
 // posts_table2 の user_id ごとに id数 を「cnt」というカラム名で表示
-$sql = "SELECT user_id, COUNT(id) AS cnt FROM posts_table2 GROUP BY user_id = '$user_id'";
+$sql = "SELECT user_id, COUNT(id) AS cnt FROM posts_table2 WHERE user_id = '$user_id' GROUP BY user_id";
 
 
 // テーブルを外部結合
